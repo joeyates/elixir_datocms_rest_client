@@ -1,19 +1,19 @@
-defmodule DatocmsClient.Mixfile do
+defmodule DatoCMS.RESTClient.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :datocms_client,
-      version: "0.2.4",
+      app: :datocms_rest_client,
+      version: "0.3.0",
       elixir: "~> 1.4",
-      name: "DatoCMS client",
-      description: "DatoCMS client with helpers for static site generators",
+      name: "DatoCMS REST API client",
+      description: "DatoCMS REST API client",
       package: package(),
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       elixirc_paths: elixirc_paths(Mix.env),
-      source_url: "https://github.com/joeyates/elixir-datocms-client",
-      homepage_url: "http://github.com/joeyates/elixir-datocms-client",
+      source_url: "https://github.com/leanpanda-com/elixir_datocms_rest_client",
+      homepage_url: "https://github.com/leanpanda-com/elixir_datocms_rest_client",
       docs: [
         main: "DatoCMS",
         extras: ["README.md", "DatoCMS-JSON-responses.md"]
@@ -25,19 +25,15 @@ defmodule DatocmsClient.Mixfile do
   def application do
     [
       extra_applications: [:httpoison, :logger],
-      mod: {DatoCMS, []}
+      mod: {DatoCMS.RESTClient, []}
     ]
   end
 
   defp deps do
     [
       {:ex_doc, "~> 0.19", only: :dev, runtime: false},
-      {:exjsx, "~> 3.2"},
-      {:fermo_helpers, "~> 0.1.0", git: "https://github.com/leanpanda-com/fermo_helpers.git"},
-      {:json_hyperschema_client_builder, "~> 0.9.1"},
-      {:httpoison, "~> 0.11.1"},
-      {:memoize, "~> 1.3"},
-      {:morphix, "~> 0.0.7"}
+      {:json_hyperschema_client_builder, "~> 0.11.0"},
+      {:httpoison, "~> 0.11.1"}
     ]
   end
 
@@ -45,7 +41,7 @@ defmodule DatocmsClient.Mixfile do
     %{
       licenses: ["MIT"],
       links: %{
-        "GitHub" => "https://github.com/joeyates/elixir-datocms-client"
+        "GitHub" => "https://github.com/leanpanda-com/elixir_datocms_rest_client"
       },
       maintainers: ["Joe Yates"]
     }
