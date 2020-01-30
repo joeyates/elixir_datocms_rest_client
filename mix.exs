@@ -4,7 +4,7 @@ defmodule DatoCMS.RESTClient.Mixfile do
   def project do
     [
       app: :datocms_rest_client,
-      version: "0.3.0",
+      version: "0.6.0",
       elixir: "~> 1.4",
       name: "DatoCMS REST API client",
       description: "DatoCMS REST API client",
