@@ -12,6 +12,10 @@ defmodule DatoCMS.RESTClient do
 
   def start(_start_type, _start_args) do
     HTTPoison.start()
+    api_config =
+      Application.get_env(:datocms_rest_client, :api_config, %{})
+      |> put_in([:json_parser_options], [keys: :atoms])
+    Application.put_env(:datocms_rest_client, :api_config, api_config)
     {:ok, self()}
   end
 end
