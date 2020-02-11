@@ -4,7 +4,7 @@ defmodule DatoCMS.RESTClient.Mixfile do
   def project do
     [
       app: :datocms_rest_client,
-      version: "0.6.0",
+      version: "0.6.1",
       elixir: "~> 1.4",
       name: "DatoCMS REST API client",
       description: "DatoCMS REST API client",
@@ -32,8 +32,8 @@ defmodule DatoCMS.RESTClient.Mixfile do
   defp deps do
     [
       {:ex_doc, "~> 0.19", only: :dev, runtime: false},
-      {:json_hyperschema_client_builder, "~> 0.11.0"},
-      {:httpoison, "~> 0.11.1"}
+      {:json_hyperschema_client_builder, "~> 0.12"},
+      {:httpoison, "~> 1.6 and >= 1.6.2"}
     ]
   end
 
